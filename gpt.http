@@ -1,0 +1,39 @@
+POST https://api.openai.com/v1/completions
+Content-Type: application/json
+Authorization: Bearer api-key
+
+{
+    "prompt": "square root of 4",
+    "max_tokens": 1000,
+    "temperature": 1,
+    "model": "text-davinci-003"
+}
+
+###
+POST https://api.openai.com/v1/chat/completions
+Content-Type: application/json
+Authorization: Bearer api-key
+
+{
+  "max_tokens": 1000,
+  "temperature": 1,
+  "model": "gpt-3.5-turbo",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a helpful assistant."
+    },
+    {
+      "role": "user",
+      "content": "Who won the world series in 2020?"
+    },
+    {
+      "role": "assistant",
+      "content": "The Los Angeles Dodgers won the World Series in 2020."
+    },
+    {
+      "role": "user",
+      "content": "Where was it played?"
+    }
+  ]
+}
